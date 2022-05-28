@@ -1,0 +1,15 @@
+body{
+    padding-left: 15px;
+}
+.azul{
+    color: blue;
+}
+.plomo{
+    color: rgb(129, 129, 129);
+}
+.rojo{
+    color: brown;
+}
+h3{
+    text-decoration: underline;
+}

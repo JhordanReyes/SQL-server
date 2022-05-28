@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Tutorial SQL server</title>
+</head>
+<body>
+    <h1>Tutorial - SQL server</h1>
+    <main>
+        <!-- Crear una base de datos -->
+        <h3>Crear una base de datos:</h3>
+        <code>
+            <span class="azul">create database</span> Salon
+        </code>
+        <!-- Usar una base de datos -->
+        <h3>Usar una base de datos:</h3>
+        <code>
+            <span class="azul">use</span> Salon
+        </code>
+        <!-- Crear una tabla -->
+        <h3>Crear una tabla:</h3>
+        <code>
+            // Importante //<br><br>
+            <span class="azul">primary key</span> => Llave primaria, solo debe haber una por tabla.<br>
+            <span class="plomo">not null</span> => no debe faltar ingresar el dato.<br><br>
+            <span class="azul">varchar</span>(8) => permite ingresar Cadena de caractered, entre los parentesis () se pone el rango de caracteres.<br>
+            <span class="azul">integer</span> => permite ingresar numeros.<br>
+            <span class="azul">float</span>(8) => permite ingresar numeros decimales.<br>
+            <br>
+            //Procedemos a crear la tabla//<br><br>
+            <span class="azul">create table</span> usuarios(<br>
+                cod_usur <span class="azul">varchar</span>(8) <span class="azul">primary key</span> <span class="plomo">not null</span>,<br>
+                name_usur <span class="azul">varchar</span>(10) <span class="plomo">not null</span>,<br>
+                dir_usur <span class="azul">varchar</span>(20) <span class="plomo">not null</span><br>
+            )
+        </code>
+        <!-- Muestra caracteristicas de la tabla -->
+        <h3>Muestrar caracteristicas de una tabla:</h3>
+        <code>
+            <span class="azul">exec</span> <span class="rojo">sp_columns</span> usuarios
+        </code>
+        <!-- Borrar una tabla -->
+        <h3>Borrar una base de datos y tabla:</h3>
+        <code>
+            <span class="azul">drop database</span> Salon<br><br>
+            <span class="azul">drop table</span> usuarios
+        </code>
+        <!-- Insertar una fila en la tabla -->
+        <h3>Insertar una fila en la tabla:</h3>
+        <code>
+            <span class="azul">insert into</span> usuarios(cod_usur,name_usur,dir_usur)<br>
+            <span class="azul">values</span>(<span class="rojo">"12ab"</span>,<span class="rojo">"Jhordan"</span>,<span class="rojo">"Jose Galvez"</span>),
+            <br>(<span class="rojo">"34cd"</span>,<span class="rojo">"Joel"</span>,<span class="rojo">"Chorrillos"</span>),
+            <br>(<span class="rojo">"56ef"</span>,<span class="rojo">"Luis"</span>,<span class="rojo">"Lurin"</span>)
+        </code>
+        <!-- Seleccionar una tabla -->
+        <h3>Seleccionar una tabla:</h3>
+        <code>
+            <span class="plomo">*</span> = > selecciona todo<br>
+            <span class="azul">select</span> * <span class="azul">from</span> usuarios
+        </code>
+    </main>
+</body>
+</html></span>
